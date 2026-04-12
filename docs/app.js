@@ -1,5 +1,5 @@
 /*!
- * Remove-Gemini-Logo-On-Image v1.0.10+2fcf042
+ * Remove-Gemini-Logo-On-Image v1.0.10+401cf7f
  * Automatically removes watermarks from Gemini AI generated images
  * (c) 2026 GargantuaX
  * https://pawankalhansh/Remove-Gemini-Logo-On-Image
