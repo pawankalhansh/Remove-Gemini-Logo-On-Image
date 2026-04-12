@@ -459,8 +459,8 @@ function isPreviewAnchorSearchEligible(originalImageData, config) {
     const width = Number(originalImageData?.width);
     const height = Number(originalImageData?.height);
     if (!Number.isFinite(width) || !Number.isFinite(height)) return false;
-    if (width < 384 || width > 1536) return false;
-    if (height < 384 || height > 1536) return false;
+    if (width < 384 || width > 8192) return false;
+    if (height < 384 || height > 8192) return false;
     if (Math.max(width, height) < 512) return false;
 
     return matchOfficialGeminiImageSize(width, height) === null;
