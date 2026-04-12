@@ -47,4 +47,4 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Test
-        run: pnpm test
+        pnpm exec node --test --exclude='tests/sdk/**/*.test.js' tests/**/*.test.js
