@@ -4,7 +4,7 @@
 
 An open-source tool to **remove Gemini watermarks** from AI-generated images with high-fidelity, reproducible results on supported outputs. Built with pure JavaScript, the engine uses a mathematically exact **Reverse Alpha Blending** algorithm instead of unpredictable AI inpainting.
 
-> **🚀 Looking for the `Online Gemini Watermark Remover (Recommended)`? Try [pilio.ai/gemini-watermark-remover](https://pilio.ai/gemini-watermark-remover)** — free, no install, works directly in your browser.
+> **🚀 Looking for the `Online Gemini Watermark Remover (Recommended)`? See the project at [github.com/pawankalhansh/Remove-Gemini-Logo-On-Image](https://github.com/pawankalhansh/Remove-Gemini-Logo-On-Image)** — source code and local usage information.
 
 <p align="center">
   <a href="https://pilio.ai/gemini-watermark-remover"><img src="https://img.shields.io/badge/🛠️_Online_Tool-pilio.ai-blue?style=for-the-badge" alt="Online Tool"></a>&nbsp;
@@ -66,7 +66,7 @@ An open-source tool to **remove Gemini watermarks** from AI-generated images wit
 
 For all users — the fastest and easiest way to remove Gemini watermarks from images:
 
-1. Open **[pilio.ai/gemini-watermark-remover](https://pilio.ai/gemini-watermark-remover)**.
+1. Open **[github.com/pawankalhansh/Remove-Gemini-Logo-On-Image](https://github.com/pawankalhansh/Remove-Gemini-Logo-On-Image)**.
 2. Drag and drop or click to select your Gemini-generated image.
 3. The engine will automatically process and remove the watermark.
 4. Download the cleaned image.

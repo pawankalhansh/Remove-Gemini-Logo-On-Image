@@ -4,7 +4,7 @@
 
 开源的 **Gemini 水印去除工具**，在已支持的 Gemini 导出图片上可提供高保真、可复现的去水印结果。基于纯 JavaScript 实现，使用数学精确的反向 Alpha 混合算法，而非 AI 修复。
 
-> **🚀 想快速去除 Gemini 水印？直接使用`在线 Gemini 去水印工具`：[pilio.ai/gemini-watermark-remover](https://pilio.ai/gemini-watermark-remover)** — 免费、无需安装，浏览器即可使用。
+> **🚀 想快速去除 Gemini 水印？查看项目： [github.com/pawankalhansh/Remove-Gemini-Logo-On-Image](https://github.com/pawankalhansh/Remove-Gemini-Logo-On-Image)**。
 
 <p align="center">
   <a href="https://pilio.ai/gemini-watermark-remover"><img src="https://img.shields.io/badge/🛠️_在线工具-pilio.ai-blue?style=for-the-badge" alt="在线工具"></a>&nbsp;
@@ -66,7 +66,7 @@
 
 所有用户均可使用 — 最简单快速的 Gemini 图片去水印方式：
 
-1. 浏览器打开 **[pilio.ai/gemini-watermark-remover](https://pilio.ai/gemini-watermark-remover)**
+1. 浏览器打开 **[github.com/pawankalhansh/Remove-Gemini-Logo-On-Image](https://github.com/pawankalhansh/Remove-Gemini-Logo-On-Image)**
 2. 拖拽或点击选择带水印的 Gemini 图片
 3. 图片会自动开始处理，移除水印
 4. 下载处理后的图片
