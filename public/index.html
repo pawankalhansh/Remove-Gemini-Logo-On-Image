@@ -170,8 +170,8 @@
                         <img id="originalImage" class="block w-auto h-auto max-w-full max-h-[60vh] object-contain object-right-bottom" draggable="false" />
 
                          <!-- Processed Image (Overlay) -->
-                        <div id="processedOverlay" class="absolute top-0 left-0 h-full w-[50%] overflow-hidden border-r-2 border-white/80 shadow-[0_0_10px_rgba(0,0,0,0.3)] box-content z-10" style="display: none;">
-                             <img id="processedImage" class="block h-full max-w-none object-contain object-right-bottom" draggable="false" />
+                        <div id="processedOverlay" class="absolute top-0 bottom-0 left-0 w-[50%] overflow-hidden border-r-2 border-white/80 shadow-[0_0_10px_rgba(0,0,0,0.3)] box-content z-10" style="display: none;">
+                             <img id="processedImage" class="absolute top-0 left-0 block max-w-none" draggable="false" />
                         </div>
 
                         <!-- Slider Handle -->
@@ -287,5 +287,80 @@
   </div>
 
   <script src="app.js"></script>
+
+  
+<script>
+  (function () {
+    const orig = document.getElementById('originalImage');
+    const proc = document.getElementById('processedImage');
+    const overlay = document.getElementById('processedOverlay');
+    const handle = document.getElementById('sliderHandle');
+
+    if (!orig || !proc || !overlay || !handle) return;
+
+    function syncDimensions() {
+      const w = orig.offsetWidth;
+      const h = orig.offsetHeight;
+      if (!w || !h) return;
+
+      proc.style.width = w + 'px';
+      proc.style.height = h + 'px';
+
+      const currentWidth = overlay.style.width || '50%';
+      overlay.style.width = currentWidth;
+      handle.style.left = currentWidth;
+    }
+
+    function syncSoon() {
+      requestAnimationFrame(() => {
+        syncDimensions();
+        requestAnimationFrame(syncDimensions);
+      });
+    }
+
+    orig.addEventListener('load', syncSoon);
+    proc.addEventListener('load', syncSoon);
+    window.addEventListener('resize', syncSoon);
+
+    new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.attributeName === 'src') syncSoon();
+      }
+    }).observe(orig, { attributes: true });
+
+    new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.attributeName === 'src') syncSoon();
+      }
+    }).observe(proc, { attributes: true });
+
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(syncSoon);
+      ro.observe(orig);
+    }
+
+    window.syncComparisonDimensions = syncSoon;
+    syncSoon();
+  })();
+
+  (function () {
+    const hint = document.getElementById('sliderHint');
+    const container = document.getElementById('comparisonContainer');
+    if (!hint || !container) return;
+
+    function dismissHint() {
+      hint.style.opacity = '0';
+      setTimeout(() => {
+        if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
+      }, 500);
+      container.removeEventListener('mousedown', dismissHint);
+      container.removeEventListener('touchstart', dismissHint);
+    }
+
+    container.addEventListener('mousedown', dismissHint);
+    container.addEventListener('touchstart', dismissHint);
+  })();
+</script>
+
 </body>
 </html>
