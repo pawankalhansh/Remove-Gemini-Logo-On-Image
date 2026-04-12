@@ -1,0 +1,16 @@
+{
+  "name": "sdk-consumer-ts-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --project tsconfig.json --pretty false"
+  },
+  "dependencies": {
+    "Remove-Gemini-Logo-On-Image": "file:../.."
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "typescript": "^5.9.3"
+  }
+}
+
