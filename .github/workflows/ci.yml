@@ -48,4 +48,4 @@ jobs:
 
       - name: Test
             run: |
-    find tests -name '*.test.js' ! -path 'tests/sdk/*' -exec pnpm exec node --test {} \;
+    find tests -name '*.test.js' ! -path 'tests/sdk/*' -exec pnpm exec node --test \{} \;
